@@ -10,7 +10,7 @@ class _EditText extends State<EditText> {
   FocusNode focusNode2 = new FocusNode();
   FocusScopeNode focusScopeNode;
 
-//定义一个controller
+  //定义一个controller
   TextEditingController _unameController = TextEditingController();
   TextEditingController _upaddwordController = TextEditingController();
   GlobalKey _globalKey = new GlobalKey<FormState>();
@@ -70,6 +70,7 @@ class _EditText extends State<EditText> {
                           if ((_globalKey.currentState as FormState)
                               .validate()) {
                             //验证通过提交数据
+                            print("输入的数据符合要求,可以提交");
                           }
                         },
                       ),
