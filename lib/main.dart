@@ -7,6 +7,7 @@ import 'package:flutterapp/ParentManagerState.dart';
 import 'BlendManagerState.dart';
 import 'ButtonStyle.dart';
 import 'PicAndIcon.dart';
+import 'ProgressBar.dart';
 import 'SelfManagerState.dart';
 import 'TextFontStyle.dart';
 
@@ -34,7 +35,8 @@ class MyApp extends StatelessWidget {
         "button_style": (context) => ButtonStyle(), //按钮
         "pic_and_icon": (context) => PicAndIcon(), //图片和icon
         "switch_and_checkbox": (context) => CheckBox(), //单选和复选框
-        "edit_text": (context) => EditText(), //单选和复选框
+        "edit_text": (context) => EditText(), //输入框
+        "progressbar": (context) => ProgressBar(), //进度条
       },
     );
   }
@@ -108,6 +110,11 @@ class MyHomePage extends StatelessWidget {
             child: Text("输入框和表单"),
             onPressed: () {
               startActivity(context, "edit_text");
+            }),
+        RaisedButton(
+            child: Text("进度指示器"),
+            onPressed: () {
+              startActivity(context, "progressbar");
             }),
       ],
     );
