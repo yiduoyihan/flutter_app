@@ -20,6 +20,7 @@ class TextFontStyle extends StatelessWidget {
           Text("I'm jack ma = " * 6, textAlign: TextAlign.center),
           Text(
             "Hello world",
+            textScaleFactor: 1.5,
             style: TextStyle(
                 color: Colors.green,
                 fontSize: 18,
@@ -33,11 +34,11 @@ class TextFontStyle extends StatelessWidget {
             TextSpan(text: "Hello word:"),
             TextSpan(
               text: "www.baidu.com",
-              style: TextStyle(color: Colors.yellow),
+              style: TextStyle(color: Colors.red),
             ),
           ])),
           Icon(
-            MyIcons.book,//自己下载的字体里面有图标
+            MyIcons.book, //自己下载的字体里面有图标
             color: Colors.purple,
           ),
           Icon(
