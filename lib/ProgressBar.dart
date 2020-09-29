@@ -77,7 +77,6 @@ class _ProgressBar extends State<ProgressBar>
                 value: .7,
               ),
             ),
-
             // 宽高不等
             SizedBox(
               height: 100,
