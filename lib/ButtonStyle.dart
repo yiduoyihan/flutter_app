@@ -11,46 +11,32 @@ class ButtonStyle extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          RaisedButton(
-            child: Text("RaisedButton"),
-            onPressed: () {
-              print(1);
-            },
-          ),
-          FlatButton(
-            child: Text("FlatButton"),
-            onPressed: () { print(2);},
-          ),
+          RaisedButton(child: Text("RaisedButton"), onPressed: () => print(1)),
+          FlatButton(child: Text("FlatButton"), onPressed: () => print(2)),
           OutlineButton(
-            child: Text("OutlineButton"),
-            onPressed: () {print(3);},
-          ),
-          IconButton(
-            icon: Icon(Icons.thumb_up),
-            onPressed: () {print(4);},
-          ),RaisedButton.icon(
-            icon: Icon(Icons.send),
-            label: Text("发送"),
-            onPressed: (){print(5);},
-          ),
+              child: Text("OutlineButton"), onPressed: () => print(3)),
+          IconButton(icon: Icon(Icons.thumb_up), onPressed: () => print(4)),
+          RaisedButton.icon(
+              icon: Icon(Icons.send),
+              label: Text("发送"),
+              onPressed: () => print(5)),
           OutlineButton.icon(
-            icon: Icon(Icons.add),
-            label: Text("添加"),
-            onPressed: (){print(6);},
-          ),
+              icon: Icon(Icons.add),
+              label: Text("添加"),
+              onPressed: () => print(6)),
           FlatButton.icon(
-            icon: Icon(Icons.info),
-            label: Text("详情"),
-            onPressed: (){print(7);},
-          ),
+              icon: Icon(Icons.info),
+              label: Text("详情"),
+              onPressed: () => print(7)),
           FlatButton(
             color: Colors.blue,
             highlightColor: Colors.blue[700],
             colorBrightness: Brightness.dark,
-            splashColor: Colors.green,
+            splashColor: Colors.blue[500],
             child: Text("自定义FlatButton按钮"),
-            shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
-            onPressed: () {},
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20.0)),
+            onPressed: () => print(8),
           ),
           RaisedButton(
             color: Colors.blue,
@@ -58,8 +44,9 @@ class ButtonStyle extends StatelessWidget {
             colorBrightness: Brightness.dark,
             splashColor: Colors.green,
             child: Text("自定义RaisedButton按钮"),
-            shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
-            onPressed: () {},
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20.0)),
+            onPressed: ()  => print(9),
           )
         ],
       ),
