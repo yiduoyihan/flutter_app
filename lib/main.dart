@@ -82,7 +82,7 @@ class MyHomePage extends StatelessWidget {
             child: Text("文本字体样式"),
             onPressed: () => startActivity(context, "text_font_style_____")),
         RaisedButton(
-            child: Text("文本字体样式"),
+            child: Text("按钮样式"),
             onPressed: () => startActivity(context, "button_style________")),
         RaisedButton(
             child: Text("图片和icon"),
