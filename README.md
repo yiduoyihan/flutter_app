@@ -1,6 +1,7 @@
 # flutterapp
 
 A new Flutter application.
+照着flutter中文网的那本书慢慢练习
 
 ## Getting Started
 
