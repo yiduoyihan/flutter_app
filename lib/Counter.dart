@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 
-//现在我们只需简单认为有状态的组件（Stateful widget） 和无状态的组件（Stateless widget）有两点不同：
-// Stateful widget可以拥有状态，这些状态在widget生命周期中是可以变的，而Stateless widget是不可变的。
-// Stateful widget至少由两个类组成：
-// 一个StatefulWidget类。
-// 一个 State类； StatefulWidget类本身是不变的，但是State类中持有的状态在widget生命周期中可能会发生变化。
+///现在我们只需简单认为有状态的组件（Stateful widget） 和无状态的组件（Stateless widget）有两点不同：
+/// Stateful widget可以拥有状态，这些状态在widget生命周期中是可以变的，而Stateless widget是不可变的。
+/// Stateful widget至少由两个类组成：
+/// 一个StatefulWidget类。
+///一个 State类； StatefulWidget类本身是不变的，但是State类中持有的状态在widget生命周期中可能会发生变化。
 class Counter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return new MyHomePage(title: 'Flutter Demo 计数器');
   }
 }
