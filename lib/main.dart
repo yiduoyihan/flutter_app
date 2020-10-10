@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/CheckBox.dart';
-import 'package:flutterapp/Counter.dart';
-import 'package:flutterapp/EditText.dart';
-import 'package:flutterapp/ParentManagerState.dart';
-
-import 'AlignLayout.dart';
-import 'BlendManagerState.dart';
-import 'ButtonStyle.dart';
-import 'FlexLayout.dart';
-import 'LinearLayout.dart';
-import 'PicAndIcon.dart';
-import 'ProgressBar.dart';
-import 'SelfManagerState.dart';
-import 'StackLayout.dart';
-import 'TextFontStyle.dart';
-import 'WrapFlowLayout.dart';
+import 'center/UseConstrainedBox.dart';
+import 'center/UsePadding.dart';
+import 'center/UseScaffold.dart';
+import 'left/AlignLayout.dart';
+import 'left/BlendManagerState.dart';
+import 'left/ButtonStyle.dart';
+import 'left/CheckBox.dart';
+import 'left/Counter.dart';
+import 'left/EditText.dart';
+import 'left/FlexLayout.dart';
+import 'left/LinearLayout.dart';
+import 'left/ParentManagerState.dart';
+import 'left/PicAndIcon.dart';
+import 'left/ProgressBar.dart';
+import 'left/SelfManagerState.dart';
+import 'left/StackLayout.dart';
+import 'left/TextFontStyle.dart';
+import 'left/WrapFlowLayout.dart';
 
 ///程序入口
 
@@ -47,6 +49,9 @@ class MyApp extends StatelessWidget {
         "wrap_and_flow_in_app": (context) => WrapFlowLayout(), //流式布局
         "stack_and_positioned": (context) => StackLayout(), //层叠布局
         "align_and_relative__": (context) => AlignLayout(), //对齐与相对定位
+        "padding_in_layout___": (context) => UsePadding(), //对padding的使用
+        "constrained_box_use_": (context) => UseConstrainedBox(), //ConstrainedBox
+        "scaffold_in_flutter_": (context) => UseScaffold(), //ConstrainedBox
       },
     );
   }
@@ -64,8 +69,8 @@ class MyHomePage extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            buildButtonColumn(context),
-            // buildButtonColumn(context),
+            buildButtonColumnLeft(context),
+            buildButtonColumnCenter(context),
             // buildButtonColumn(context),
           ],
         ),
@@ -73,7 +78,7 @@ class MyHomePage extends StatelessWidget {
     );
   }
 
-  buildButtonColumn(BuildContext context) {
+  buildButtonColumnLeft(BuildContext context) {
     return Column(
       children: [
         RaisedButton(
@@ -121,6 +126,25 @@ class MyHomePage extends StatelessWidget {
         RaisedButton(
             child: Text("对齐与相对定位"),
             onPressed: () => startActivity(context, "align_and_relative__")),
+      ],
+    );
+  }
+
+  buildButtonColumnCenter(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        RaisedButton(
+          child: Text("padding"),
+          onPressed: () => startActivity(context, "padding_in_layout___"),
+        ),
+        RaisedButton(
+          child: Text("约束盒"),
+          onPressed: () => startActivity(context, "constrained_box_use_"),
+        ),
+        RaisedButton(
+          child: Text("脚手架的使用"),
+          onPressed: ()=> startActivity(context, "scaffold_in_flutter_"),
+        ),
       ],
     );
   }
