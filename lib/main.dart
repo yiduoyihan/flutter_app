@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
+import 'center/MixScrollView.dart';
+import 'center/TestStaggeredGridView.dart';
 import 'center/UseConstrainedBox.dart';
+import 'center/UseGridViewWidget.dart';
+import 'center/UseListViewWidget.dart';
 import 'center/UsePadding.dart';
+import 'center/UseRealGridViewWidget.dart';
+import 'center/UseRealListViewWidget.dart';
 import 'center/UseScaffold.dart';
+import 'center/UseScrollWidget.dart';
 import 'left/AlignLayout.dart';
 import 'left/BlendManagerState.dart';
 import 'left/ButtonStyle.dart';
@@ -33,25 +40,52 @@ class MyApp extends StatelessWidget {
       initialRoute: "/", //名为"/"的路由作为应用的home(首页)
       //注册路由表
       routes: {
-        "/": (context) => MyHomePage(), //首页路由
-        "new_counter_page____": (context) => Counter(), //计数器页面
-        "self_manager_state__": (context) => SelfManagerState(), //自管理状态页面
-        "parent_manager_state": (context) => ParentManagerState(), //父管理状态页面
-        "blend_manager_state_": (context) => BlendManagerState(), //混合管理状态页面
-        "text_font_style_____": (context) => TextFontStyle(), //文本字体样式
-        "button_style________": (context) => ButtonStyle(), //按钮
-        "picture_and_icon____": (context) => PicAndIcon(), //图片和icon
-        "switch_and_checkbox_": (context) => CheckBox(), //单选和复选框
-        "edit_text_input_____": (context) => EditText(), //输入框
-        "progressbar_________": (context) => ProgressBar(), //进度条
-        "linear_layout_in_app": (context) => LinearLayout(), //线性布局
-        "flex_layout_in_app__": (context) => FlexLayout(), //弹性布局
-        "wrap_and_flow_in_app": (context) => WrapFlowLayout(), //流式布局
-        "stack_and_positioned": (context) => StackLayout(), //层叠布局
-        "align_and_relative__": (context) => AlignLayout(), //对齐与相对定位
-        "padding_in_layout___": (context) => UsePadding(), //对padding的使用
-        "constrained_box_use_": (context) => UseConstrainedBox(), //ConstrainedBox
-        "scaffold_in_flutter_": (context) => UseScaffold(), //ConstrainedBox
+        "/": (context) => MyHomePage(),
+        //首页路由
+        "new_counter_page____": (context) => Counter(),
+        //计数器页面
+        "self_manager_state__": (context) => SelfManagerState(),
+        //自管理状态页面
+        "parent_manager_state": (context) => ParentManagerState(),
+        //父管理状态页面
+        "blend_manager_state_": (context) => BlendManagerState(),
+        //混合管理状态页面
+        "text_font_style_____": (context) => TextFontStyle(),
+        //文本字体样式
+        "button_style________": (context) => ButtonStyle(),
+        //按钮
+        "picture_and_icon____": (context) => PicAndIcon(),
+        //图片和icon
+        "switch_and_checkbox_": (context) => CheckBox(),
+        //单选和复选框
+        "edit_text_input_____": (context) => EditText(),
+        //输入框
+        "progressbar_________": (context) => ProgressBar(),
+        //进度条
+        "linear_layout_in_app": (context) => LinearLayout(),
+        //线性布局
+        "flex_layout_in_app__": (context) => FlexLayout(),
+        //弹性布局
+        "wrap_and_flow_in_app": (context) => WrapFlowLayout(),
+        //流式布局
+        "stack_and_positioned": (context) => StackLayout(),
+        //层叠布局
+        "align_and_relative__": (context) => AlignLayout(),
+        //对齐与相对定位
+        "padding_in_layout___": (context) => UsePadding(),
+        //对padding的使用
+        "constrained_box_use_": (context) => UseConstrainedBox(),
+        //ConstrainedBox
+        "scaffold_in_flutter_": (context) => UseScaffold(),
+        //脚手架使用
+        "scroll_widget_use___": (context) => UseScrollWidget(),
+        //滚动组件
+        "listview_attributes_": (context) => UseListViewWidget(),
+        "listview_attributes_1": (context) => UseRealListViewWidget(),
+        "gridview_attributes_": (context) => UseGridViewWidget(),
+        "gridview_attributes_1": (context) => UseRealGridViewWidget(),
+        "gridview_staggerrd__": (context) => TestStaggeredGridView(),
+        "mix_scroll_view_test": (context) => MixScrollView(),
       },
     );
   }
@@ -143,7 +177,35 @@ class MyHomePage extends StatelessWidget {
         ),
         RaisedButton(
           child: Text("脚手架的使用"),
-          onPressed: ()=> startActivity(context, "scaffold_in_flutter_"),
+          onPressed: () => startActivity(context, "scaffold_in_flutter_"),
+        ),
+        RaisedButton(
+          child: Text("可滚动组件"),
+          onPressed: () => startActivity(context, "scroll_widget_use___"),
+        ),
+        RaisedButton(
+          child: Text("ListView"),
+          onPressed: () => startActivity(context, "listview_attributes_"),
+        ),
+        RaisedButton(
+          child: Text("真实listview加载"),
+          onPressed: () => startActivity(context, "listview_attributes_1"),
+        ),
+        RaisedButton(
+          child: Text("GridView"),
+          onPressed: () => startActivity(context, "gridview_attributes_"),
+        ),
+        RaisedButton(
+          child: Text("模拟真实GridView"),
+          onPressed: () => startActivity(context, "gridview_attributes_1"),
+        ),
+        RaisedButton(
+          child: Text("瀑布流GridView"),
+          onPressed: () => startActivity(context, "gridview_staggerrd__"),
+        ),
+        RaisedButton(
+          child: Text("混合的滑动列表"),
+          onPressed: () => startActivity(context, "mix_scroll_view_test"),
         ),
       ],
     );
