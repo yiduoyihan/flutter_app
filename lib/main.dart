@@ -11,7 +11,7 @@ import 'center/UseScaffold.dart';
 import 'center/UseScrollWidget.dart';
 import 'left/AlignLayout.dart';
 import 'left/BlendManagerState.dart';
-import 'left/ButtonStyle.dart';
+import 'left/ButtonStyleTest.dart';
 import 'left/CheckBox.dart';
 import 'left/Counter.dart';
 import 'left/EditText.dart';
@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
         //混合管理状态页面
         "text_font_style_____": (context) => TextFontStyle(),
         //文本字体样式
-        "button_style________": (context) => ButtonStyle(),
+        "button_style________": (context) => ButtonStyleTest(),
         //按钮
         "picture_and_icon____": (context) => PicAndIcon(),
         //图片和icon
