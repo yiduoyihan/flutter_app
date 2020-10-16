@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'center/MixScrollView.dart';
+import 'center/ScrollListener.dart';
 import 'center/TestStaggeredGridView.dart';
 import 'center/UseConstrainedBox.dart';
 import 'center/UseGridViewWidget.dart';
@@ -81,17 +82,26 @@ class MyApp extends StatelessWidget {
         "scroll_widget_use___": (context) => UseScrollWidget(),
         //滚动组件
         "listview_attributes_": (context) => UseListViewWidget(),
+        //ListView
         "listview_attributes_1": (context) => UseRealListViewWidget(),
+        //模拟真实分页加载的ListView
         "gridview_attributes_": (context) => UseGridViewWidget(),
+        //GridView
         "gridview_attributes_1": (context) => UseRealGridViewWidget(),
+        //模拟真实分页加载的GridView
         "gridview_staggerrd__": (context) => TestStaggeredGridView(),
+        //瀑布流gridview
         "mix_scroll_view_test": (context) => MixScrollView(),
+        //混合布局（ListView + GridView）
+        "scroll_listener_test": (context) => ScrollListener(),
+        //滚动监听
       },
     );
   }
 }
 
 class MyHomePage extends StatelessWidget {
+  DateTime _lastPressedAt; //上次点击时间
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -207,6 +217,24 @@ class MyHomePage extends StatelessWidget {
           child: Text("混合的滑动列表"),
           onPressed: () => startActivity(context, "mix_scroll_view_test"),
         ),
+        RaisedButton(
+          child: Text("滚动监听"),
+          onPressed: () => startActivity(context, "scroll_listener_test"),
+        ),
+        WillPopScope(
+            child: Container(
+              alignment: Alignment.center,
+              child: Text("再按一下退出"),
+            ),
+            onWillPop: () async {
+              if (_lastPressedAt == null ||
+                  DateTime.now().difference(_lastPressedAt) >
+                      Duration(seconds: 2)) {
+                _lastPressedAt = DateTime.now();
+                return false;
+              }
+              return true;
+            })
       ],
     );
   }

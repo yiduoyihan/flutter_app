@@ -105,8 +105,9 @@ class UseConstrainedBox extends StatelessWidget {
             height: 20,
           ),
 
-          ///Transform的变换是应⽤在绘制阶段，⽽并不是应⽤在布局(layout)阶段，所以⽆论对⼦widget应⽤何种变化，其占
-          /// ⽤空间的⼤⼩和在屏幕上的位置都是固定不变的，因为这些是在布局阶段就确定的
+          ///Transform的变换是应⽤在绘制阶段，⽽并不是应⽤在布局(layout)阶段，所以⽆论
+          ///对⼦widget应⽤何种变化，其占⽤空间的⼤⼩和在屏幕上的位置都是固定不变的，
+          ///因为这些是在布局阶段就确定的
           DecoratedBox(
             decoration: BoxDecoration(color: Colors.red),
             child: Transform.translate(
