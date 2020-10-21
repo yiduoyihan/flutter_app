@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutterapp/center/DialogTest.dart';
+import 'center/BothDirectionTestRoute.dart';
+import 'center/DragAndMoveTest.dart';
+import 'center/EventTest.dart';
+import 'center/GestureRecognizerTest.dart';
 import 'center/MixScrollView.dart';
+import 'center/ScaleTestRouteState.dart';
 import 'center/ScrollListener.dart';
 import 'center/TestStaggeredGridView.dart';
+import 'center/ThemeTest.dart';
 import 'center/UseConstrainedBox.dart';
 import 'center/UseGridViewWidget.dart';
 import 'center/UseListViewWidget.dart';
@@ -94,6 +101,13 @@ class MyApp extends StatelessWidget {
         "mix_scroll_view_test": (context) => MixScrollView(),
         //混合布局（ListView + GridView）
         "scroll_listener_test": (context) => ScrollListener(),
+        "theme_test_in_all___": (context) => ThemeTest(),
+        "dialog_test_in_all__": (context) => DialogTest(),
+        "event_test_in_all___": (context) => EventTest(),
+        "drag_and_move_test__": (context) => DragAndMoveTest(),
+        "scale_route_state___": (context) => ScaleTestRouteState(),
+        "gesturerecognizertest": (context) => GestureRecognizerTest(),
+        "both_direction_test_": (context) => BothDirectionTestRoute(),
         //滚动监听
       },
     );
@@ -108,119 +122,153 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Flutter实战book练习"),
       ),
-      body: new Container(
-        //有一行，一行里面有3列。
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            buildButtonColumnLeft(context),
-            buildButtonColumnCenter(context),
-            // buildButtonColumn(context),
-          ],
-        ),
-      ),
-    );
-  }
-
-  buildButtonColumnLeft(BuildContext context) {
-    return Column(
-      children: [
-        RaisedButton(
-            child: Text("计数器"),
-            onPressed: () => startActivity(context, "new_counter_page____")),
-        RaisedButton(
-            child: Text("自管理状态"),
-            onPressed: () => startActivity(context, "self_manager_state__")),
-        RaisedButton(
-            child: Text("父管理状态"),
-            onPressed: () => startActivity(context, "parent_manager_state")),
-        RaisedButton(
-            child: Text("混合管理状态"),
-            onPressed: () => startActivity(context, "blend_manager_state_")),
-        RaisedButton(
-            child: Text("文本字体样式"),
-            onPressed: () => startActivity(context, "text_font_style_____")),
-        RaisedButton(
-            child: Text("按钮样式"),
-            onPressed: () => startActivity(context, "button_style________")),
-        RaisedButton(
-            child: Text("图片和icon"),
-            onPressed: () => startActivity(context, "picture_and_icon____")),
-        RaisedButton(
-            child: Text("单选和复选"),
-            onPressed: () => startActivity(context, "switch_and_checkbox_")),
-        RaisedButton(
-            child: Text("输入框和表单"),
-            onPressed: () => startActivity(context, "edit_text_input_____")),
-        RaisedButton(
-            child: Text("进度指示器"),
-            onPressed: () => startActivity(context, "progressbar_________")),
-        RaisedButton(
-            child: Text("线性布局体现"),
-            onPressed: () => startActivity(context, "linear_layout_in_app")),
-        RaisedButton(
-            child: Text("弹性布局"),
-            onPressed: () => startActivity(context, "flex_layout_in_app__")),
-        RaisedButton(
-            child: Text("流式布局"),
-            onPressed: () => startActivity(context, "wrap_and_flow_in_app")),
-        RaisedButton(
-            child: Text("层叠布局"),
-            onPressed: () => startActivity(context, "stack_and_positioned")),
-        RaisedButton(
-            child: Text("对齐与相对定位"),
-            onPressed: () => startActivity(context, "align_and_relative__")),
-      ],
+      body: GridView(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2, //横轴三个子widget
+            childAspectRatio: 4, //宽高比为1时，子widget
+            mainAxisSpacing: 1,
+            crossAxisSpacing: 1,
+          ),
+          children: <Widget>[
+            RaisedButton(
+                child: Text("计数器"),
+                onPressed: () =>
+                    startActivity(context, "new_counter_page____")),
+            RaisedButton(
+                child: Text("自管理状态"),
+                onPressed: () =>
+                    startActivity(context, "self_manager_state__")),
+            RaisedButton(
+                child: Text("父管理状态"),
+                onPressed: () =>
+                    startActivity(context, "parent_manager_state")),
+            RaisedButton(
+                child: Text("混合管理状态"),
+                onPressed: () =>
+                    startActivity(context, "blend_manager_state_")),
+            RaisedButton(
+                child: Text("文本字体样式"),
+                onPressed: () =>
+                    startActivity(context, "text_font_style_____")),
+            RaisedButton(
+                child: Text("按钮样式"),
+                onPressed: () =>
+                    startActivity(context, "button_style________")),
+            RaisedButton(
+                child: Text("图片和icon"),
+                onPressed: () =>
+                    startActivity(context, "picture_and_icon____")),
+            RaisedButton(
+                child: Text("单选和复选"),
+                onPressed: () =>
+                    startActivity(context, "switch_and_checkbox_")),
+            RaisedButton(
+                child: Text("输入框和表单"),
+                onPressed: () =>
+                    startActivity(context, "edit_text_input_____")),
+            RaisedButton(
+                child: Text("进度指示器"),
+                onPressed: () =>
+                    startActivity(context, "progressbar_________")),
+            RaisedButton(
+                child: Text("线性布局体现"),
+                onPressed: () =>
+                    startActivity(context, "linear_layout_in_app")),
+            RaisedButton(
+                child: Text("弹性布局"),
+                onPressed: () =>
+                    startActivity(context, "flex_layout_in_app__")),
+            RaisedButton(
+                child: Text("流式布局"),
+                onPressed: () =>
+                    startActivity(context, "wrap_and_flow_in_app")),
+            RaisedButton(
+                child: Text("层叠布局"),
+                onPressed: () =>
+                    startActivity(context, "stack_and_positioned")),
+            RaisedButton(
+                child: Text("对齐与相对定位"),
+                onPressed: () =>
+                    startActivity(context, "align_and_relative__")),
+            RaisedButton(
+              child: Text("padding"),
+              onPressed: () => startActivity(context, "padding_in_layout___"),
+            ),
+            RaisedButton(
+              child: Text("约束盒"),
+              onPressed: () => startActivity(context, "constrained_box_use_"),
+            ),
+            RaisedButton(
+              child: Text("脚手架的使用"),
+              onPressed: () => startActivity(context, "scaffold_in_flutter_"),
+            ),
+            RaisedButton(
+              child: Text("可滚动组件"),
+              onPressed: () => startActivity(context, "scroll_widget_use___"),
+            ),
+            RaisedButton(
+              child: Text("ListView"),
+              onPressed: () => startActivity(context, "listview_attributes_"),
+            ),
+            RaisedButton(
+              child: Text("真实listview加载"),
+              onPressed: () => startActivity(context, "listview_attributes_1"),
+            ),
+            RaisedButton(
+              child: Text("GridView"),
+              onPressed: () => startActivity(context, "gridview_attributes_"),
+            ),
+            RaisedButton(
+              child: Text("模拟真实GridView"),
+              onPressed: () => startActivity(context, "gridview_attributes_1"),
+            ),
+            RaisedButton(
+              child: Text("瀑布流GridView"),
+              onPressed: () => startActivity(context, "gridview_staggerrd__"),
+            ),
+            RaisedButton(
+              child: Text("混合的滑动列表"),
+              onPressed: () => startActivity(context, "mix_scroll_view_test"),
+            ),
+            RaisedButton(
+              child: Text("滚动监听"),
+              onPressed: () => startActivity(context, "scroll_listener_test"),
+            ),
+            RaisedButton(
+              child: Text("主题测试"),
+              onPressed: () => startActivity(context, "theme_test_in_all___"),
+            ),
+            RaisedButton(
+              child: Text("对话框测试"),
+              onPressed: () => startActivity(context, "dialog_test_in_all__"),
+            ),
+            RaisedButton(
+              child: Text("事件处理"),
+              onPressed: () => startActivity(context, "event_test_in_all___"),
+            ),
+            RaisedButton(
+              child: Text("拖拽，移动"),
+              onPressed: () => startActivity(context, "drag_and_move_test__"),
+            ),
+            RaisedButton(
+              child: Text("缩放"),
+              onPressed: () => startActivity(context, "scale_route_state___"),
+            ),
+            RaisedButton(
+              child: Text("GestureRecognizer"),
+              onPressed: () => startActivity(context, "gesturerecognizertest"),
+            ),
+            RaisedButton(
+              child: Text("手势冲突竞争"),
+              onPressed: () => startActivity(context, "both_direction_test_"),
+            ),
+          ]),
     );
   }
 
   buildButtonColumnCenter(BuildContext context) {
     return Column(
       children: <Widget>[
-        RaisedButton(
-          child: Text("padding"),
-          onPressed: () => startActivity(context, "padding_in_layout___"),
-        ),
-        RaisedButton(
-          child: Text("约束盒"),
-          onPressed: () => startActivity(context, "constrained_box_use_"),
-        ),
-        RaisedButton(
-          child: Text("脚手架的使用"),
-          onPressed: () => startActivity(context, "scaffold_in_flutter_"),
-        ),
-        RaisedButton(
-          child: Text("可滚动组件"),
-          onPressed: () => startActivity(context, "scroll_widget_use___"),
-        ),
-        RaisedButton(
-          child: Text("ListView"),
-          onPressed: () => startActivity(context, "listview_attributes_"),
-        ),
-        RaisedButton(
-          child: Text("真实listview加载"),
-          onPressed: () => startActivity(context, "listview_attributes_1"),
-        ),
-        RaisedButton(
-          child: Text("GridView"),
-          onPressed: () => startActivity(context, "gridview_attributes_"),
-        ),
-        RaisedButton(
-          child: Text("模拟真实GridView"),
-          onPressed: () => startActivity(context, "gridview_attributes_1"),
-        ),
-        RaisedButton(
-          child: Text("瀑布流GridView"),
-          onPressed: () => startActivity(context, "gridview_staggerrd__"),
-        ),
-        RaisedButton(
-          child: Text("混合的滑动列表"),
-          onPressed: () => startActivity(context, "mix_scroll_view_test"),
-        ),
-        RaisedButton(
-          child: Text("滚动监听"),
-          onPressed: () => startActivity(context, "scroll_listener_test"),
-        ),
         WillPopScope(
             child: Container(
               alignment: Alignment.center,
