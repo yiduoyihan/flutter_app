@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterapp/center/DialogTest.dart';
 import 'center/AnimationTest.dart';
@@ -5,10 +6,12 @@ import 'center/BothDirectionTestRoute.dart';
 import 'center/DragAndMoveTest.dart';
 import 'center/EventTest.dart';
 import 'center/GestureRecognizerTest.dart';
+import 'center/HeroAnimationTest.dart';
 import 'center/MixScrollView.dart';
 import 'center/NotificationTest.dart';
 import 'center/ScaleTestRouteState.dart';
 import 'center/ScrollListener.dart';
+import 'center/StaggerRoute.dart';
 import 'center/TestStaggeredGridView.dart';
 import 'center/ThemeTest.dart';
 import 'center/UseConstrainedBox.dart';
@@ -112,6 +115,8 @@ class MyApp extends StatelessWidget {
         "both_direction_test_": (context) => BothDirectionTestRoute(),
         "notification_test___": (context) => NotificationTest(),
         "animation_test___": (context) => AnimationTest(),
+        "hero_animation_test": (context) => HeroAnimationTest(),
+        "stagger_route_test": (context) => StaggerRoute(),
         //滚动监听
       },
     );
@@ -274,6 +279,14 @@ class MyHomePage extends StatelessWidget {
               child: Text("动画"),
               onPressed: () => startActivity(context, "animation_test___"),
             ),
+            RaisedButton(
+              child: Text("Hero动画"),
+              onPressed: () => startActivity(context, "hero_animation_test"),
+            ),
+            RaisedButton(
+              child: Text("交织动画"),
+              onPressed: () => startActivity(context, "stagger_route_test"),
+            ),
           ]),
     );
   }
@@ -302,4 +315,7 @@ class MyHomePage extends StatelessWidget {
 
 startActivity(BuildContext context, String string) {
   Navigator.pushNamed(context, string);
+  // Navigator.push(context, CupertinoPageRoute(
+  //   builder: (context)=>AnimationTest(),
+  // ));
 }
