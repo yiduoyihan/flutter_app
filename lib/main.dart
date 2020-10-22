@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/center/DialogTest.dart';
+import 'center/AnimationTest.dart';
 import 'center/BothDirectionTestRoute.dart';
 import 'center/DragAndMoveTest.dart';
 import 'center/EventTest.dart';
 import 'center/GestureRecognizerTest.dart';
 import 'center/MixScrollView.dart';
+import 'center/NotificationTest.dart';
 import 'center/ScaleTestRouteState.dart';
 import 'center/ScrollListener.dart';
 import 'center/TestStaggeredGridView.dart';
@@ -108,6 +110,8 @@ class MyApp extends StatelessWidget {
         "scale_route_state___": (context) => ScaleTestRouteState(),
         "gesturerecognizertest": (context) => GestureRecognizerTest(),
         "both_direction_test_": (context) => BothDirectionTestRoute(),
+        "notification_test___": (context) => NotificationTest(),
+        "animation_test___": (context) => AnimationTest(),
         //滚动监听
       },
     );
@@ -261,6 +265,14 @@ class MyHomePage extends StatelessWidget {
             RaisedButton(
               child: Text("手势冲突竞争"),
               onPressed: () => startActivity(context, "both_direction_test_"),
+            ),
+            RaisedButton(
+              child: Text("NotificationTest"),
+              onPressed: () => startActivity(context, "notification_test___"),
+            ),
+            RaisedButton(
+              child: Text("动画"),
+              onPressed: () => startActivity(context, "animation_test___"),
             ),
           ]),
     );
