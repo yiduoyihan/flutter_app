@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterapp/center/DialogTest.dart';
+import 'center/AnimatedSwitcherCounterRoute.dart';
+import 'center/AnimatedWidgetsTest.dart';
 import 'center/AnimationTest.dart';
 import 'center/BothDirectionTestRoute.dart';
 import 'center/DragAndMoveTest.dart';
@@ -114,9 +116,11 @@ class MyApp extends StatelessWidget {
         "gesturerecognizertest": (context) => GestureRecognizerTest(),
         "both_direction_test_": (context) => BothDirectionTestRoute(),
         "notification_test___": (context) => NotificationTest(),
-        "animation_test___": (context) => AnimationTest(),
-        "hero_animation_test": (context) => HeroAnimationTest(),
-        "stagger_route_test": (context) => StaggerRoute(),
+        "animation_test______": (context) => AnimationTest(),
+        "hero_animation_test_": (context) => HeroAnimationTest(),
+        "stagger_route_test__": (context) => StaggerRoute(),
+        "animated_switcher___": (context) => AnimatedSwitcherCounterRoute(),
+        "animatedwidgets_test": (context) => AnimatedWidgetsTest(),
         //滚动监听
       },
     );
@@ -277,15 +281,23 @@ class MyHomePage extends StatelessWidget {
             ),
             RaisedButton(
               child: Text("动画"),
-              onPressed: () => startActivity(context, "animation_test___"),
+              onPressed: () => startActivity(context, "animation_test______"),
             ),
             RaisedButton(
               child: Text("Hero动画"),
-              onPressed: () => startActivity(context, "hero_animation_test"),
+              onPressed: () => startActivity(context, "hero_animation_test_"),
             ),
             RaisedButton(
               child: Text("交织动画"),
-              onPressed: () => startActivity(context, "stagger_route_test"),
+              onPressed: () => startActivity(context, "stagger_route_test__"),
+            ),
+            RaisedButton(
+              child: Text("通用动画切换组件"),
+              onPressed: () => startActivity(context, "animated_switcher___"),
+            ),
+            RaisedButton(
+              child: Text("动画过渡组件"),
+              onPressed: () => startActivity(context, "animatedwidgets_test"),
             ),
           ]),
     );
