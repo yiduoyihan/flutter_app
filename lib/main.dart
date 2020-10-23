@@ -5,9 +5,12 @@ import 'center/AnimatedSwitcherCounterRoute.dart';
 import 'center/AnimatedWidgetsTest.dart';
 import 'center/AnimationTest.dart';
 import 'center/BothDirectionTestRoute.dart';
+import 'center/CustomPaintRoute.dart';
 import 'center/DragAndMoveTest.dart';
 import 'center/EventTest.dart';
 import 'center/GestureRecognizerTest.dart';
+import 'center/GradientButtonRoute.dart';
+import 'center/GradientCircularProgressRoute.dart';
 import 'center/HeroAnimationTest.dart';
 import 'center/MixScrollView.dart';
 import 'center/NotificationTest.dart';
@@ -16,6 +19,7 @@ import 'center/ScrollListener.dart';
 import 'center/StaggerRoute.dart';
 import 'center/TestStaggeredGridView.dart';
 import 'center/ThemeTest.dart';
+import 'center/TurnBoxRoute.dart';
 import 'center/UseConstrainedBox.dart';
 import 'center/UseGridViewWidget.dart';
 import 'center/UseListViewWidget.dart';
@@ -121,6 +125,10 @@ class MyApp extends StatelessWidget {
         "stagger_route_test__": (context) => StaggerRoute(),
         "animated_switcher___": (context) => AnimatedSwitcherCounterRoute(),
         "animatedwidgets_test": (context) => AnimatedWidgetsTest(),
+        "gradient_button_route": (context) => GradientButtonRoute(),
+        "turn_box_route_test_": (context) => TurnBoxRoute(),
+        "custom_paint_route__": (context) => CustomPaintRoute(),
+        "gradient_circle_route": (context) => GradientCircularProgressRoute (),
         //滚动监听
       },
     );
@@ -298,6 +306,22 @@ class MyHomePage extends StatelessWidget {
             RaisedButton(
               child: Text("动画过渡组件"),
               onPressed: () => startActivity(context, "animatedwidgets_test"),
+            ),
+            RaisedButton(
+              child: Text("组合现有组件"),
+              onPressed: () => startActivity(context, "gradient_button_route"),
+            ),
+            RaisedButton(
+              child: Text("旋转容器turnBox"),
+              onPressed: () => startActivity(context, "turn_box_route_test_"),
+            ),
+            RaisedButton(
+              child: Text("CustomPaint"),
+              onPressed: () => startActivity(context, "custom_paint_route__"),
+            ),
+            RaisedButton(
+              child: Text("GradientButtonRoute"),
+              onPressed: () => startActivity(context, "gradient_circle_route"),
             ),
           ]),
     );
