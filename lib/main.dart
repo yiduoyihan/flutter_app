@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterapp/center/DialogTest.dart';
+import 'package:flutterapp/eleven/HttpClientTest.dart';
 import 'center/AnimatedSwitcherCounterRoute.dart';
 import 'center/AnimatedWidgetsTest.dart';
 import 'center/AnimationTest.dart';
@@ -28,6 +29,7 @@ import 'center/UseRealGridViewWidget.dart';
 import 'center/UseRealListViewWidget.dart';
 import 'center/UseScaffold.dart';
 import 'center/UseScrollWidget.dart';
+import 'eleven/FileTest1.dart';
 import 'left/AlignLayout.dart';
 import 'left/BlendManagerState.dart';
 import 'left/ButtonStyleTest.dart';
@@ -128,7 +130,9 @@ class MyApp extends StatelessWidget {
         "gradient_button_route": (context) => GradientButtonRoute(),
         "turn_box_route_test_": (context) => TurnBoxRoute(),
         "custom_paint_route__": (context) => CustomPaintRoute(),
-        "gradient_circle_route": (context) => GradientCircularProgressRoute (),
+        "gradient_circle_route": (context) => GradientCircularProgressRoute(),
+        "file_test_1": (context) => FileTest1(),
+        "http_client_test": (context) => HttpClientTest(),
         //滚动监听
       },
     );
@@ -322,6 +326,13 @@ class MyHomePage extends StatelessWidget {
             RaisedButton(
               child: Text("GradientButtonRoute"),
               onPressed: () => startActivity(context, "gradient_circle_route"),
+            ),
+            RaisedButton(
+              child: Text("文件操作"),
+              onPressed: () => startActivity(context, "file_test_1"),
+            ), RaisedButton(
+              child: Text("网络请求"),
+              onPressed: () => startActivity(context, "http_client_test"),
             ),
           ]),
     );
