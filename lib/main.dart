@@ -29,6 +29,7 @@ import 'center/UseRealGridViewWidget.dart';
 import 'center/UseRealListViewWidget.dart';
 import 'center/UseScaffold.dart';
 import 'center/UseScrollWidget.dart';
+import 'eleven/DioHttpTest.dart';
 import 'eleven/FileTest1.dart';
 import 'left/AlignLayout.dart';
 import 'left/BlendManagerState.dart';
@@ -133,6 +134,7 @@ class MyApp extends StatelessWidget {
         "gradient_circle_route": (context) => GradientCircularProgressRoute(),
         "file_test_1": (context) => FileTest1(),
         "http_client_test": (context) => HttpClientTest(),
+        "dio_http_test": (context) => DioHttpTest(),
         //滚动监听
       },
     );
@@ -151,8 +153,8 @@ class MyHomePage extends StatelessWidget {
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2, //横轴三个子widget
             childAspectRatio: 4, //宽高比为1时，子widget
-            mainAxisSpacing: 1,
-            crossAxisSpacing: 1,
+            mainAxisSpacing: 5,
+            crossAxisSpacing: 5,
           ),
           children: <Widget>[
             RaisedButton(
@@ -330,9 +332,13 @@ class MyHomePage extends StatelessWidget {
             RaisedButton(
               child: Text("文件操作"),
               onPressed: () => startActivity(context, "file_test_1"),
-            ), RaisedButton(
+            ),
+            RaisedButton(
               child: Text("网络请求"),
               onPressed: () => startActivity(context, "http_client_test"),
+            ),  RaisedButton(
+              child: Text("Dio网络请求"),
+              onPressed: () => startActivity(context, "dio_http_test"),
             ),
           ]),
     );
